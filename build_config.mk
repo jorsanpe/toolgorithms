@@ -13,7 +13,7 @@ LIBRARIES +=
 LIBRARY_PATHS +=
 
 # Symbols to be defined
-SYMBOLS += _XOPEN_SOURCE NOOPT
+SYMBOLS += _XOPEN_SOURCE _GNU_SOURCE NOOPT
 
 # Files to be excluded from the compilation
 EXCLUDED_FILES +=
