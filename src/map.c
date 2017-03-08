@@ -58,3 +58,12 @@ void *Map_Find(Map *self, Key *key)
 	}
 	return NULL;
 }
+
+
+void Map_Delete(Map *self, Key *key)
+{
+	if (self->map_node != NULL) {
+		free(self->map_node);
+		self->map_node = NULL;
+	}
+}

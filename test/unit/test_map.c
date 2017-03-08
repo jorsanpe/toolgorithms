@@ -1,4 +1,5 @@
 #include <unity.h>
+#include <Mockkey.h>
 
 #include <map.h>
 
@@ -7,6 +8,7 @@ static Map *map;
 
 void setUp(void)
 {
+	Mockkey_Init();
 	map = Map_Create();
 }
 
@@ -14,6 +16,7 @@ void setUp(void)
 void tearDown(void)
 {
 	Map_Destroy(map);
+	Mockkey_Verify();
 }
 
 
@@ -62,5 +65,44 @@ void should_find_an_inserted_value_by_key(void)
 	value_found = Map_Find(map, key);
 
 	TEST_ASSERT_EQUAL_PTR(&value, value_found);
+}
+
+
+void should_be_empty_after_deleting_the_only_value_by_key(void)
+{
+	int value;
+	Key *key = NULL;
+
+	Map_Insert(map, key, &value);
+
+	Map_Delete(map, key);
+
+	TEST_ASSERT_TRUE(Map_isEmpty(map));
+}
+
+
+void should_not_find_an_inserted_value_after_removing_it(void)
+{
+	int value;
+	Key *key = NULL;
+
+	Map_Insert(map, key, &value);
+
+	Map_Delete(map, key);
+
+	TEST_ASSERT_NULL(Map_Find(map, key));
+}
+
+
+void should_insert_many_keys_in_the_map(void)
+{
+	int value1, value2, ret;
+	Key *key1 = NULL, *key2 = NULL;
+
+	ret = Map_Insert(map, key1, &value1);
+	TEST_ASSERT_EQUAL_INT(0, ret);
+
+	ret = Map_Insert(map, key2, &value2);
+	TEST_ASSERT_EQUAL_INT(0, ret);
 }
 

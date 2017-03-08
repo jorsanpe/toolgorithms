@@ -5,7 +5,7 @@ test_map = src/map.c
 
 
 ## Define the list of headers from which to create mocks
-MOCK_HEADERS = 
+MOCK_HEADERS = include/key.h
 
 
 ## Define this if you want to selectively run tests

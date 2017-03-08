@@ -21,3 +21,5 @@ _Bool Map_isEmpty(Map *self);
 int Map_Insert(Map *self, Key *key, void *value);
 
 void *Map_Find(Map *self, Key *key);
+
+void Map_Delete(Map *self, Key *key);
