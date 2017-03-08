@@ -21,7 +21,7 @@ EXCLUDED_FILES +=
 # Compiler flags for specific files
 # <filename> = flags
 
-CFLAGS += -Wno-deprecated-declarations
+CFLAGS += -Wno-deprecated-declarations --include stdbool.h
 
 LDFLAGS +=
 

@@ -19,7 +19,7 @@ struct fiber {
 };
 
 
-static void createContext(Fiber* self)
+static void createContext(Fiber *self)
 {
     getcontext(&self->context);
     self->context.uc_link = &self->parent_context;

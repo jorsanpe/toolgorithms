@@ -1,11 +1,12 @@
 /**
  * fiber.h -- Fiber library
  *
- * Copyright (C) 2015 Jordi Sánchez, jorsanpe@gmail.com
+ * Copyright (C) 2017 Jordi Sánchez, jorsanpe@gmail.com
  *
  * This software may be modified and distributed under the terms
  * of the MIT license.  See the LICENSE file for details.
  */
+#pragma once
 
 #define kFIBER_CONTEXT_SAVED    0
 #define kFIBER_CONTEXT_RESTORED 1

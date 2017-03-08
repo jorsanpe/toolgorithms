@@ -1,5 +1,7 @@
 ## For each test, define the list of required sources
 test_fiber = src/fiber.c
+test_fiber_scheduler = src/fiber_scheduler.c
+test_map = src/map.c
 
 
 ## Define the list of headers from which to create mocks
